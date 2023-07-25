@@ -11,7 +11,7 @@ import java.awt.Point;
  */
 public class InstrumentedTortue extends Tortue {
 
-    private JavaPaintUI ui;
+    final private JavaPaintUI ui;
 
     public InstrumentedTortue() {
         ui = new JavaPaintUI();
@@ -28,7 +28,7 @@ public class InstrumentedTortue extends Tortue {
     }
 
     @Override
-    void avancer(int combien) {
+    public void avancer(int combien) {
 
         InstrumentedTortue.super.avancer(combien);
         ui.addPoint(new Point(InstrumentedTortue.this.x + 500, InstrumentedTortue.this.y + 500));
@@ -38,14 +38,14 @@ public class InstrumentedTortue extends Tortue {
     }
 
     @Override
-    void tournerDroite(int angle) {
+    public void tournerDroite(int angle) {
 
         InstrumentedTortue.super.tournerDroite(angle);
 
     }
 
     @Override
-    void tournerGauche(int angle) {
+    public void tournerGauche(int angle) {
 
         InstrumentedTortue.super.tournerGauche(angle);
 
